@@ -14,7 +14,7 @@ def calculate():
 #variables TK
 root = tk.Tk()              # create tkInter window
 root.title('Text analyser') # set title
-root.geometry('700x600')    # set dimension
+root.geometry('680x600')    # set dimension
 calculateInput = tk.Text(root, width = 70, height = 30, background='lightgrey')            # generate imput element
 calculateButton = ttk.Button(root, text='Bereken score(s)', command=calculate)        # generate button when pressed -> calculate
 characterLabel = tk.Label(root, text=f'Karakters:', width=20, bg='black', fg='white') # generate characterLabel
