@@ -1,3 +1,5 @@
+from math import ceil
+
 EASY_TEXT = """Ik hou van programmeren. Programmeren is leuk. 
 Ik kan veel dingen maken met programmeren. Ik kan een website maken. 
 Ik kan een spel maken. Ik kan een chatbot maken. 
@@ -49,7 +51,7 @@ def getNumberOfCharacters(text: str) -> int:
 def getNumberOfSentences(text: str) -> int:
     sentence_count = 0
     sentence_end = {'?', '!', '.'}
-    for c in EASY_TEXT:
+    for c in text:
         if c in sentence_end:
                 sentence_count += 1
     return sentence_count
@@ -59,4 +61,24 @@ def getNumberOfSentences(text: str) -> int:
 
 def getNumberOfWords(text: str) -> int:
     return len(text.split())
-    
+
+
+def avi_score(text: str ) -> int:
+    words = getNumberOfWords(text)
+    sentences = getNumberOfSentences(text)
+
+    gemiddelde = ceil((words + sentences) / 2)
+
+    if gemiddelde <= 7:
+        avi = 5
+    elif gemiddelde == 8:
+        avi = 6
+    elif gemiddelde == 9:
+        avi = 7
+    elif gemiddelde == 10:
+        avi = 8
+    elif gemiddelde == 11:
+        avi = 11
+    elif gemiddelde > 11:
+        avi = 12
+    return avi
